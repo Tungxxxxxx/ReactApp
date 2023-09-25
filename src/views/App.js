@@ -1,6 +1,8 @@
 import "./App.css";
 import MenuList from "./components/MenuList";
 
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
   return (
     <div className="container">

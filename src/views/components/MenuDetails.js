@@ -1,5 +1,7 @@
 import React from "react";
 import Todo from "./Todo";
+// import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 
 class MenuDetails extends React.Component {
   state = {
@@ -20,6 +22,7 @@ class MenuDetails extends React.Component {
       task: "",
       arrTasks: [...this.state.arrTasks, taskObj],
     });
+    toast.success("Add success");
   };
   handleOnClickDel = (id) => {
     this.setState({
@@ -46,6 +49,20 @@ class MenuDetails extends React.Component {
               handleOnClickDel={this.handleOnClickDel}
               handleOnchangeTask={this.handleOnchangeTask}
             />
+            <ToastContainer
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="light"
+            />
+            {/* Same as */}
+            <ToastContainer />
           </>
         );
       default:
