@@ -13,9 +13,20 @@ code {
 }
 
 .input-div {
-  display: flex;
-}
-.item-div {
   display: grid;
   grid-template-columns: 1fr auto;
+}
+.item-span {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  padding-right: 0 !important;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+}
+button {
+  margin-left: 2px;
+}
+.task-title {
+  cursor: pointer;
 }

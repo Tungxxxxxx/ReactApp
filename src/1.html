@@ -12,25 +12,111 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <div class="container">
-      <h2>List Group With Linked Items</h2>
-      <div class="list-group">
-        <span class="list-group-item">First item</span>
-        <span class="list-group-item">Second item</span>
-        <span class="list-group-item">Third item</span>
-      </div>
-    </div>
-    <div class="item-div list-group" style="width: 1000px; display: flex">
-      <a class="list-group-item flex-grow-1">aaaaaaaaaaaaa</a
-      ><button type="button" class="btn btn-danger">Delete</button>
-    </div>
-    <div
-      class="item-div list-group"
-      style="display: grid; grid-template-columns: 1fr 2fr auto; width: 100%"
-    >
-      <a class="list-group-item">aaaaaaaaaaaa</a>
-      <a class="list-group-item">aaaaaaaaaaaa</a>
-      <button type="button" class="btn btn-danger">Del</button>
-    </div>
+    <input type="text" id="year" value="" />
+    <input type="text" id="month" value="" />
+    <button onclick="ConsoleLog('0')">ConsoleLog</button>
+
+    <button id="clickBtn">Click</button>
+    <!-- <button onclick="GetLastDay('','5')">Rỗng</button>
+    <button onclick="GetLastDay(true,'5')">true</button>
+    <button onclick="GetLastDay(false,'5')">false</button>
+    <button onclick="GetLastDay([],'5')">[]</button>
+    <button onclick="GetLastDay(3.14,'5')">3.14</button>
+    <button onclick="GetLastDay(12000,'2')">12000</button>
+    <button onclick="GetLastDay2([],'5')">click2</button> -->
+    <script>
+      ConsoleLog = (input) => {
+        console.log(typeof input);
+        console.log(Number.isInteger(input));
+      };
+
+      const clickBtn = document.getElementById("clickBtn");
+      clickBtn.addEventListener("click", () => {
+        let yearTxt = document.getElementById("year").value;
+        let monthTxt = document.getElementById("month").value;
+        GetLastDay(parseFloat(yearTxt), parseFloat(monthTxt));
+        GetLastDay2(parseFloat(yearTxt), parseFloat(monthTxt));
+      });
+      /**
+       *@function GetLastDay get the last day of the month
+       *@param year year input
+       *@param month month input
+       *@returns the last day of month format as dd/MM/yyyy
+       *Created by Tungpt - 27/09/2023
+       */
+      function GetLastDay(year, month) {
+        if (!Number.isInteger(year)) {
+          console.log("enter an integer value for year");
+          return;
+        } else if (year <= 0) {
+          console.log("year must be greater than 0");
+          return;
+        }
+        if (!Number.isInteger(month)) {
+          console.log("enter an integer value for month");
+          return;
+        } else if (month <= 0 || month > 12) {
+          console.log("month must be from 1 to 12");
+          return;
+        }
+        let lastDay;
+        switch (month) {
+          case 2:
+            lastDay =
+              (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0
+                ? 29
+                : 28;
+            break;
+          case 4:
+          case 6:
+          case 9:
+          case 11:
+            lastDay = 30;
+            break;
+          default:
+            lastDay = 31;
+            break;
+        }
+        month = String(month).padStart(2, "0");
+        year = String(year).padStart(4, "0");
+        console.log(">>>The last day: ", `${lastDay}/${month}/${year}`);
+        return `${lastDay}/${month}/${year}`;
+      }
+
+      /**
+       *@function GetLastDay2 get the last day of the month
+       *@param year year input
+       *@param month month input
+       *@returns the last day of month format as dd/MM/yyyy
+       *Created by Tungpt - 27/09/2023
+       */
+      function GetLastDay2(year, month) {
+        if (!Number.isInteger(year)) {
+          console.log("enter an integer value for year");
+          return;
+        } else if (year <= 0) {
+          console.log("year must be greater than 0");
+          return;
+        }
+        if (!Number.isInteger(month)) {
+          console.log("enter an integer value for month");
+          return;
+        } else if (month <= 0 || month > 12) {
+          console.log("month must be from 1 to 12");
+          return;
+        }
+        let lastDay = new Date(year, month, 0);
+        month = String(lastDay.getMonth() + 1).padStart(2, "0");
+        year = String(lastDay.getFullYear()).padStart(4, "0");
+        let day = String(lastDay.getDate());
+
+        console.log(">>>The last day: ", `${day}/${month}/${year}`);
+        return `${day}/${month}/${year}`;
+      }
+      function IsNotNumber(input) {
+        let regex = /\D/;
+        return regex.test(input) || isNaN(input);
+      }
+    </script>
   </body>
 </html>
