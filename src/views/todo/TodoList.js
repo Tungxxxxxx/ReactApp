@@ -3,7 +3,7 @@ import Todo from "./Todo";
 // import { toast } from "react-toastify";
 import { ToastContainer, toast } from "react-toastify";
 
-class MenuDetails extends React.Component {
+class TodoList extends React.Component {
   state = {
     task: "",
     arrTasks: [
@@ -53,6 +53,8 @@ class MenuDetails extends React.Component {
           editTask: {},
         });
         toast.info("No change");
+      } else if (this.state.editTask.title === "") {
+        toast.error("Missing input task");
       } else {
         arrTasksCopy[editIndex].title = this.state.editTask.title;
         //Set lại state
@@ -75,46 +77,35 @@ class MenuDetails extends React.Component {
     });
   };
   render() {
-    let { menuObj } = this.props;
     let { arrTasks } = this.state;
     console.log(arrTasks);
-    switch (menuObj.menu) {
-      case "home":
-        return (
-          <>
-            <p>Homeeeeeeeeeeeeeeeee</p>
-          </>
-        );
-      case "todo":
-        return (
-          <>
-            <Todo
-              task={this.state}
-              handleOnclickAdd={this.handleOnclickAdd}
-              handleOnClickDel={this.handleOnClickDel}
-              handleOnchangeTask={this.handleOnchangeTask}
-              handleOnClickEdit={this.handleOnClickEdit}
-              handleOnchangeEditTask={this.handleOnchangeEditTask}
-            />
-            <ToastContainer
-              position="top-right"
-              autoClose={500}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-              theme="light"
-            />
-            {/* Same as */}
-            <ToastContainer />
-          </>
-        );
-      default:
-        break;
-    }
+
+    return (
+      <>
+        <Todo
+          task={this.state}
+          handleOnclickAdd={this.handleOnclickAdd}
+          handleOnClickDel={this.handleOnClickDel}
+          handleOnchangeTask={this.handleOnchangeTask}
+          handleOnClickEdit={this.handleOnClickEdit}
+          handleOnchangeEditTask={this.handleOnchangeEditTask}
+        />
+        <ToastContainer
+          position="top-right"
+          autoClose={500}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
+        {/* Same as */}
+        <ToastContainer />
+      </>
+    );
   }
 }
-export default MenuDetails;
+export default TodoList;
