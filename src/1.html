@@ -10,167 +10,51 @@
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="1.css" />
   </head>
   <body>
-    <input type="text" id="year" value="" />
-    <input type="text" id="month" value="" />
-    <button onclick="ConsoleLog('0')">ConsoleLog</button>
+    <!-- Load font awesome icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-    <button id="clickBtn">Click</button>
-    <!-- <button onclick="GetLastDay('','5')">Rỗng</button>
-    <button onclick="GetLastDay(true,'5')">true</button>
-    <button onclick="GetLastDay(false,'5')">false</button>
-    <button onclick="GetLastDay([],'5')">[]</button>
-    <button onclick="GetLastDay(3.14,'5')">3.14</button>
-    <button onclick="GetLastDay(12000,'2')">12000</button>
-    <button onclick="GetLastDay2([],'5')">click2</button> -->
-    <script>
-      ConsoleLog = (input) => {
-        console.log(typeof input);
-        console.log(Number.isInteger(input));
-      };
-
-      const clickBtn = document.getElementById("clickBtn");
-      clickBtn.addEventListener("click", () => {
-        let yearTxt = document.getElementById("year").value;
-        let monthTxt = document.getElementById("month").value;
-        GetLastDay(parseFloat(yearTxt), parseFloat(monthTxt));
-        GetLastDay2(parseFloat(yearTxt), parseFloat(monthTxt));
-      });
-      /**
-       *@function GetLastDay get the last day of the month
-       *@param year year input
-       *@param month month input
-       *@returns the last day of month format as dd/MM/yyyy
-       *Created by Tungpt - 27/09/2023
-       */
-      function GetLastDay(year, month) {
-        if (!Number.isInteger(year)) {
-          console.log("enter an integer value for year");
-          return;
-        } else if (year <= 0) {
-          console.log("year must be greater than 0");
-          return;
-        }
-        if (!Number.isInteger(month)) {
-          console.log("enter an integer value for month");
-          return;
-        } else if (month <= 0 || month > 12) {
-          console.log("month must be from 1 to 12");
-          return;
-        }
-        let lastDay;
-        switch (month) {
-          case 2:
-            lastDay =
-              (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0
-                ? 29
-                : 28;
-            break;
-          case 4:
-          case 6:
-          case 9:
-          case 11:
-            lastDay = 30;
-            break;
-          default:
-            lastDay = 31;
-            break;
-        }
-        month = String(month).padStart(2, "0");
-        year = String(year).padStart(4, "0");
-        console.log(">>>The last day: ", `${lastDay}/${month}/${year}`);
-        return `${lastDay}/${month}/${year}`;
-      }
-
-      /**
-       *@function GetLastDay2 get the last day of the month
-       *@param year year input
-       *@param month month input
-       *@returns the last day of month format as dd/MM/yyyy
-       *Created by Tungpt - 27/09/2023
-       */
-      function GetLastDay2(year, month) {
-        if (!Number.isInteger(year)) {
-          console.log("enter an integer value for year");
-          return;
-        } else if (year <= 0) {
-          console.log("year must be greater than 0");
-          return;
-        }
-        if (!Number.isInteger(month)) {
-          console.log("enter an integer value for month");
-          return;
-        } else if (month <= 0 || month > 12) {
-          console.log("month must be from 1 to 12");
-          return;
-        }
-        let lastDay = new Date(year, month, 0);
-        month = String(lastDay.getMonth() + 1).padStart(2, "0");
-        year = String(lastDay.getFullYear()).padStart(4, "0");
-        let day = String(lastDay.getDate());
-
-        console.log(">>>The last day: ", `${day}/${month}/${year}`);
-        return `${day}/${month}/${year}`;
-      }
-      function IsNotNumber(input) {
-        let regex = /\D/;
-        return regex.test(input) || isNaN(input);
-      }
-    </script>
-    <table>
-      <thead>
-        <tr>
-          <th>STT</th>
-          <th>Họ và tên</th>
-          <th>Phòng/ban, đơn vị</th>
-          <th>Email</th>
-          <th>Pass</th>
-          <th>HTTT</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>Nguyễn Thị Vân Anh</td>
-          <td>Phòng Dịch vụ phần mềm</td>
-          <td>anhntv.piacom@petrolimex.com.vn</td>
-          <td>anh2023</td>
-          <td>anhntv/123456</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
+    <!-- The navigation menu -->
+    <div class="navbar">
+      <a href="#home">Home</a>
+      <div class="subnav">
+        <button class="subnavbtn">
+          About <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="subnav-content">
+          <a href="#company">Company</a>
+          <a href="#team">Team</a>
+          <a href="#careers">Careers</a>
+        </div>
+      </div>
+      <div class="subnav">
+        <button class="subnavbtn">
+          Services <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="subnav-content">
+          <a href="#bring">Bring</a>
+          <a href="#deliver">Deliver</a>
+          <a href="#package">Package</a>
+          <a href="#express">Express</a>
+        </div>
+      </div>
+      <div class="subnav">
+        <button class="subnavbtn">
+          Partners <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="subnav-content">
+          <a href="#link1">Link 1</a>
+          <a href="#link2">Link 2</a>
+          <a href="#link3">Link 3</a>
+          <a href="#link4">Link 4</a>
+        </div>
+      </div>
+      <a href="#contact">Contact</a>
+    </div>
   </body>
 </html>

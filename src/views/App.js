@@ -4,8 +4,8 @@ import Home from "./home/Home";
 import About from "./about/About";
 import TodoList from "./todo/TodoList";
 import Title from "./title/Title";
-import Apps from "./apps/Apps";
-import WatchVideo from "./apps/watchVideo/WatchVideo";
+// import Apps from "./apps/Apps";
+// import WatchVideo from "./apps/watchVideo/WatchVideo";
 import "react-toastify/dist/ReactToastify.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 class App extends React.Component {
@@ -15,6 +15,14 @@ class App extends React.Component {
       milliseconds: 5000, // Giá trị đếm ngược ban đầu
     };
   }
+  hadleSetCountDownBegin = () => {
+    console.log(">>>Check click Home");
+    // this.setState({
+    //   milliseconds: 5000,
+    // });
+    console.log(">>>Check click Home", this.state.milliseconds);
+    this.countDown(5000);
+  };
   componentDidMount() {
     this.countDown(this.state.milliseconds);
   }
@@ -47,31 +55,18 @@ class App extends React.Component {
     }, 10);
   };
   menus = [
-    { path: "/", component: Home, name: "Home" },
-
-    {
-      path: "/apps",
-      component: Apps,
-      name: "Apps",
-      menus: [
-        {
-          path: "/apps/todo",
-          component: TodoList,
-          name: "Todo",
-        },
-        {
-          path: "/apps/watchVideo",
-          component: WatchVideo,
-          name: "WatchVideo",
-        },
-      ],
-    },
-    { path: "/about", component: About, name: "About" },
+    { id: 1, path: "/", component: Home, name: "Home" },
+    { id: 2, path: "/todo", component: TodoList, name: "Todo" },
+    { id: 3, path: "/about", component: About, name: "About" },
   ];
   render() {
     return (
       <Router>
-        <Nav menus={this.menus} />
+        <Nav
+          menus={this.menus}
+          hadleSetCountDownBegin={this.hadleSetCountDownBegin}
+          countDown={this.countDown}
+        />
         <header className=" container jumbotron jumbotron-fluid">
           <div className="container text-center">
             <Title countDown={this.state.milliseconds} />
@@ -84,17 +79,12 @@ class App extends React.Component {
                 <Route path="/" exact>
                   <Home countDown={this.state.milliseconds} />
                 </Route>
-                {this.menus.map((menu, index) => {
-                  return (
-                    <>
-                      {index > 0 && (
-                        <>
-                          <Route path={menu.path} component={menu.component} />
-                        </>
-                      )}
-                    </>
-                  );
-                })}
+                <Route path="/todo" exact>
+                  <TodoList />
+                </Route>
+                <Route path="/about" exact>
+                  <About />
+                </Route>
               </Switch>
             </div>
           </div>
