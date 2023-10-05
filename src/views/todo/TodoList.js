@@ -2,6 +2,7 @@ import React from "react";
 import Todo from "./Todo";
 // import { toast } from "react-toastify";
 import { ToastContainer, toast } from "react-toastify";
+import Color from "../HOC/Color";
 
 class TodoList extends React.Component {
   state = {
@@ -104,4 +105,4 @@ class TodoList extends React.Component {
     );
   }
 }
-export default TodoList;
+export default Color(TodoList);

@@ -91,8 +91,10 @@ class App extends React.Component {
         </div>
         {/* <!-- Phần chân trang --> */}
         <footer className="footer">
-          <div className="container">
-            <p>&copy; 2023 Phạm Thanh Tùng</p>
+          <div className="container" style={{ backgroundColor: "#ebebeb" }}>
+            <p style={{ textAlign: "center" }}>
+              Copyright © 2023 Phạm Thanh Tùng
+            </p>
           </div>
         </footer>
       </Router>
