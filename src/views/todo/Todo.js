@@ -4,9 +4,6 @@ class Todo extends React.Component {
   render() {
     let { task, arrTasks, editTask } = this.props.task;
     let editTaskIsEmpty = Object.keys(editTask).length === 0;
-    console.log(">>>Check props:", this.props);
-    console.log(">>>Check task:", task);
-    console.log(">>>Check arrTasks:", arrTasks);
     return (
       <>
         <div className="input-div">

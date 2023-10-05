@@ -68,7 +68,6 @@ class TodoList extends React.Component {
     }
   };
   handleOnchangeEditTask = (event, item) => {
-    console.log(">>>Đây là on change task");
     this.setState({
       editTask: {
         id: item.id,
@@ -77,9 +76,6 @@ class TodoList extends React.Component {
     });
   };
   render() {
-    let { arrTasks } = this.state;
-    console.log(arrTasks);
-
     return (
       <>
         <Todo
