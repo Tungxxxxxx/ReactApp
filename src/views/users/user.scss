@@ -1,0 +1,25 @@
+table {
+  margin: 0 auto;
+  tr {
+    th {
+      text-align: center;
+    }
+    td {
+      vertical-align: middle;
+      img {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.detail-user {
+  margin-bottom: 10px;
+  span {
+    text-align: center;
+    margin: 15px;
+  }
+  p {
+    text-indent: 20px;
+  }
+}

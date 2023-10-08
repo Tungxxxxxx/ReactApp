@@ -4,6 +4,8 @@ import Home from "./home/Home";
 import About from "./about/About";
 import TodoList from "./todo/TodoList";
 import Title from "./title/Title";
+import User from "./users/User";
+import DetailUser from "./users/DetailUser";
 // import Apps from "./apps/Apps";
 // import WatchVideo from "./apps/watchVideo/WatchVideo";
 import "react-toastify/dist/ReactToastify.css";
@@ -16,15 +18,15 @@ class App extends React.Component {
     };
   }
   hadleSetCountDownBegin = () => {
-    console.log(">>>Check click Home");
+    // console.log(">>>Check click Home");
     // this.setState({
     //   milliseconds: 5000,
     // });
-    console.log(">>>Check click Home", this.state.milliseconds);
-    this.countDown(5000);
+    // console.log(">>>Check click Home", this.state.milliseconds);
+    // this.countDown(5000);
   };
   componentDidMount() {
-    this.countDown(this.state.milliseconds);
+    // this.countDown(this.state.milliseconds);
   }
   countDown = (s) => {
     // Sử dụng setInterval để lặp lại đoạn mã, hàm
@@ -58,6 +60,7 @@ class App extends React.Component {
     { id: 1, path: "/", component: Home, name: "Home" },
     { id: 2, path: "/todo", component: TodoList, name: "Todo" },
     { id: 3, path: "/about", component: About, name: "About" },
+    { id: 4, path: "/user", component: User, name: "User" },
   ];
   render() {
     return (
@@ -84,6 +87,12 @@ class App extends React.Component {
                 </Route>
                 <Route path="/about" exact>
                   <About />
+                </Route>
+                <Route path="/user" exact>
+                  <User />
+                </Route>
+                <Route path="/user/:id">
+                  <DetailUser />
                 </Route>
               </Switch>
             </div>

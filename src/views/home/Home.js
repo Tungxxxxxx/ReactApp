@@ -10,7 +10,7 @@ class Home extends React.Component {
     // console.log(">>> Check props", this.props);
     return (
       <div>
-        <div class="theme-doc-markdown markdown">
+        <div className="theme-doc-markdown markdown">
           <header>
             <h1>Contributing Overview</h1>
           </header>
@@ -65,11 +65,14 @@ class Home extends React.Component {
               </a>
             </li>
           </ul>
-          <h3 class="anchor anchorWithStickyNavbar_JmGV" id="code-of-conduct">
+          <h3
+            className="anchor anchorWithStickyNavbar_JmGV"
+            id="code-of-conduct"
+          >
             Code of Conduct
             <a
               href="#code-of-conduct"
-              class="hash-link"
+              className="hash-link"
               aria-label="Direct link to Code of Conduct"
               title="Direct link to Code of Conduct"
             >
@@ -88,13 +91,13 @@ class Home extends React.Component {
             .
           </p>
           <h2
-            class="anchor anchorWithStickyNavbar_JmGV"
+            className="anchor anchorWithStickyNavbar_JmGV"
             id="ways-to-contribute"
           >
             Ways to Contribute
             <a
               href="#ways-to-contribute"
-              class="hash-link"
+              className="hash-link"
               aria-label="Direct link to Ways to Contribute"
               title="Direct link to Ways to Contribute"
             >
@@ -174,13 +177,13 @@ class Home extends React.Component {
             greatly appreciate your help.
           </p>
           <h3
-            class="anchor anchorWithStickyNavbar_JmGV"
+            className="anchor anchorWithStickyNavbar_JmGV"
             id="our-development-process"
           >
             Our Development Process
             <a
               href="#our-development-process"
-              class="hash-link"
+              className="hash-link"
               aria-label="Direct link to Our Development Process"
               title="Direct link to Our Development Process"
             >
@@ -237,11 +240,11 @@ class Home extends React.Component {
             </a>
             .
           </p>
-          <h3 class="anchor anchorWithStickyNavbar_JmGV" id="repositories">
+          <h3 className="anchor anchorWithStickyNavbar_JmGV" id="repositories">
             Repositories
             <a
               href="#repositories"
-              class="hash-link"
+              className="hash-link"
               aria-label="Direct link to Repositories"
               title="Direct link to Repositories"
             >
@@ -332,11 +335,11 @@ class Home extends React.Component {
             Browsing through these repositories should provide some insight into
             how the React Native open source project is managed.
           </p>
-          <h2 class="anchor anchorWithStickyNavbar_JmGV" id="github-issues">
+          <h2 className="anchor anchorWithStickyNavbar_JmGV" id="github-issues">
             GitHub Issues
             <a
               href="#github-issues"
-              class="hash-link"
+              className="hash-link"
               aria-label="Direct link to GitHub Issues"
               title="Direct link to GitHub Issues"
             >
@@ -351,11 +354,11 @@ class Home extends React.Component {
             </a>
             .
           </p>
-          <h3 class="anchor anchorWithStickyNavbar_JmGV" id="security-bugs">
+          <h3 className="anchor anchorWithStickyNavbar_JmGV" id="security-bugs">
             Security Bugs
             <a
               href="#security-bugs"
-              class="hash-link"
+              className="hash-link"
               aria-label="Direct link to Security Bugs"
               title="Direct link to Security Bugs"
             >
@@ -376,13 +379,13 @@ class Home extends React.Component {
             issue.
           </p>
           <h2
-            class="anchor anchorWithStickyNavbar_JmGV"
+            className="anchor anchorWithStickyNavbar_JmGV"
             id="helping-with-documentation"
           >
             Helping with Documentation
             <a
               href="#helping-with-documentation"
-              class="hash-link"
+              className="hash-link"
               aria-label="Direct link to Helping with Documentation"
               title="Direct link to Helping with Documentation"
             >
@@ -409,13 +412,13 @@ class Home extends React.Component {
             your changes.
           </p>
           <h3
-            class="anchor anchorWithStickyNavbar_JmGV"
+            className="anchor anchorWithStickyNavbar_JmGV"
             id="contributing-to-the-blog"
           >
             Contributing to the Blog
             <a
               href="#contributing-to-the-blog"
-              class="hash-link"
+              className="hash-link"
               aria-label="Direct link to Contributing to the Blog"
               title="Direct link to Contributing to the Blog"
             >
@@ -461,11 +464,14 @@ class Home extends React.Component {
             </a>{" "}
             to learn more about contributing to the website in general.
           </p>
-          <h2 class="anchor anchorWithStickyNavbar_JmGV" id="contributing-code">
+          <h2
+            className="anchor anchorWithStickyNavbar_JmGV"
+            id="contributing-code"
+          >
             Contributing Code
             <a
               href="#contributing-code"
-              class="hash-link"
+              className="hash-link"
               aria-label="Direct link to Contributing Code"
               title="Direct link to Contributing Code"
             >
@@ -569,13 +575,13 @@ class Home extends React.Component {
             merged, maintainers will do their best to explain the reason why.
           </p>
           <h3
-            class="anchor anchorWithStickyNavbar_JmGV"
+            className="anchor anchorWithStickyNavbar_JmGV"
             id="step-by-step-guide"
           >
             Step-by-step Guide
             <a
               href="#step-by-step-guide"
-              class="hash-link"
+              className="hash-link"
               aria-label="Direct link to Step-by-step Guide"
               title="Direct link to Step-by-step Guide"
             >
@@ -593,11 +599,11 @@ class Home extends React.Component {
             </a>{" "}
             page for more details.
           </p>
-          <h3 class="anchor anchorWithStickyNavbar_JmGV" id="tests">
+          <h3 className="anchor anchorWithStickyNavbar_JmGV" id="tests">
             Tests
             <a
               href="#tests"
-              class="hash-link"
+              className="hash-link"
               aria-label="Direct link to Tests"
               title="Direct link to Tests"
             >
@@ -626,13 +632,13 @@ class Home extends React.Component {
             page.
           </p>
           <h2
-            class="anchor anchorWithStickyNavbar_JmGV"
+            className="anchor anchorWithStickyNavbar_JmGV"
             id="community-contributions"
           >
             Community Contributions
             <a
               href="#community-contributions"
-              class="hash-link"
+              className="hash-link"
               aria-label="Direct link to Community Contributions"
               title="Direct link to Community Contributions"
             >

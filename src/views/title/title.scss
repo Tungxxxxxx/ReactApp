@@ -1,0 +1,15 @@
+.border-animation {
+  width: 200px;
+  height: 200px;
+  border: 2px solid transparent;
+  animation: pulse 2s infinite alternate; /* Sử dụng animation với tên "pulse" */
+}
+
+@keyframes pulse {
+  0% {
+    border-color: red; /* Khi bắt đầu, đường viền màu đỏ */
+  }
+  100% {
+    border-color: blue; /* Khi kết thúc, đường viền màu xanh */
+  }
+}
