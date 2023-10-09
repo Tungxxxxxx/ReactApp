@@ -6,6 +6,7 @@ import TodoList from "./todo/TodoList";
 import Title from "./title/Title";
 import User from "./users/User";
 import DetailUser from "./users/DetailUser";
+
 // import Apps from "./apps/Apps";
 // import WatchVideo from "./apps/watchVideo/WatchVideo";
 import "react-toastify/dist/ReactToastify.css";
@@ -70,11 +71,14 @@ class App extends React.Component {
           hadleSetCountDownBegin={this.hadleSetCountDownBegin}
           countDown={this.countDown}
         />
-        <header className=" container jumbotron jumbotron-fluid">
-          <div className="container text-center">
-            <Title countDown={this.state.milliseconds} />
-          </div>
-        </header>
+        {/* <header className=" container jumbotron jumbotron-fluid"> */}
+        <div
+          className="container text-center"
+          style={{ margin: "5px auto", opacity: 0.8, padding: 0 }}
+        >
+          <Title countDown={this.state.milliseconds} />
+        </div>
+        {/* </header> */}
         <div className="container">
           <div className="row">
             <div className="col-md-12">

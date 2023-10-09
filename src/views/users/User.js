@@ -81,8 +81,12 @@ class User extends React.Component {
               users.map((user, i) => {
                 return (
                   <tr key={user.id}>
-                    <td>{user.id}</td>
-                    <td>
+                    <td
+                      style={{ textAlign: "center", verticalAlign: "middle" }}
+                    >
+                      {user.id}
+                    </td>
+                    <td style={{ textAlign: "center" }}>
                       {" "}
                       <img
                         src={user.avatar}
@@ -90,8 +94,14 @@ class User extends React.Component {
                         onClick={() => this.handleOnclickImg(user.id)}
                       />
                     </td>
-                    <td>{user.email}</td>
-                    <td>{`${user.first_name} ${user.last_name}`}</td>
+                    <td
+                      style={{ textAlign: "center", verticalAlign: "middle" }}
+                    >
+                      {user.email}
+                    </td>
+                    <td
+                      style={{ textAlign: "center", verticalAlign: "middle" }}
+                    >{`${user.first_name} ${user.last_name}`}</td>
                   </tr>
                 );
               })
